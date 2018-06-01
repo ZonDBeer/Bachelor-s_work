@@ -1,0 +1,6 @@
+scp alg2_lv.c timoshkin@oak.cpct.sibsutis.ru:~/
+ssh timoshkin@oak.cpct.sibsutis.ru
+scp alg2_lv.c timoshkin@cnmic2:~/
+ssh timoshkin@cnmic2
+
+gcc  -O3 -ffast-math -fivopts -march=native -fno-tree-vectorize -o alg2_lv alg2_lv.c

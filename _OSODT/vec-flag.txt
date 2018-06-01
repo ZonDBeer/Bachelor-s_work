@@ -1,0 +1,13 @@
+Автовекторизация  
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native -fopt-info-vec-missed -fopt-info-vec -c main.c -o main.o
+gcc -o main main.o
+		
+		
+Без векторизации 
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native  -fno-tree-vectorize -c main.c -o main.o
+gcc -o main main.o
+
+
+С векторизацией  
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native  -fno-tree-vectorize -c main.c -o main.o
+gcc -o main main.o 

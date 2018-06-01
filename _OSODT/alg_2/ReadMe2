@@ -1,0 +1,12 @@
+#
+#
+# Метод линейного ве4торного поиска
+#
+#
+Автовекторизация:
+gcc -Wall -O3 -ffast-math -fivopts -march=native -fopt-info-vec -fopt-info-vec-missed -c alg2_lv.c -o alg2_lv.o
+gcc -o alg2_lv alg2_lv.o
+
+Векторизация:
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native  -fno-tree-vectorize -c alg2_lv.c -o alg2_lv.o
+gcc -o alg2_lv alg2_lv.o

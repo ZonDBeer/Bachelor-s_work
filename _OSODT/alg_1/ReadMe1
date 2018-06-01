@@ -1,0 +1,32 @@
+#
+#
+# Метод поиска делением интервала поиска пополам
+#
+#
+
+Автовекторизация:
+gcc -Wall -O3 -ffast-math -fivopts -march=native -fopt-info-vec -fopt-info-vec-missed -c bin_search_lin.c -o bin_search_lin.o
+gcc -o bin_search_lin bin_search_lin.o
+
+Векторизация:
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native -fno-tree-vectorize -c bin_search_lin.c -o bin_search_lin.o
+gcc -o bin_search_lin bin_search_lin.o
+
+
+
+Векторизация
+gcc -Wall -O3 -mavx -ffast-math -fivopts -march=native -fno-tree-vectorize -c bin_search_vec.c -o bin_search_vec.o
+gcc -o bin_search_vec bin_search_vec.o -lm
+
+
+
+
+c++ -Wall -mavx -O3 -ffast-math -fivopts -march=native -fopt-info-vec -fopt-info-vec-missed -c bin.cpp -o bin.o
+
+
+
+clang -O3 -mavx -ffast-math -fvectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -c bin3.cpp -o bin31.o
+clang -mavx -o bin31 bin31.o
+
+
+
